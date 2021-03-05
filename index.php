@@ -24,12 +24,14 @@
 <h2> Test </h2><br>
                 <section>
                 
-                <?php foreach ($results as $result) ; ?>
+                <?php foreach ($results as $result) : ?>
                 
                 <tr>
                     <td><?php echo $result['make']; ?></td><br>
-                    <td><?php echo $result['make_id']; ?></td>
+                    <td><?php echo $result['make_id']; ?></td><br>
                 </tr>
+
+                <?php endforeach; ?>
                 </section>
     
 </body>
