@@ -13,7 +13,7 @@
 */
     
 
-    $dsn = 'mysql:lyn7gfxo996yjjco.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=patsjzwz4qgedw8r';
+    $db = 'mysql:lyn7gfxo996yjjco.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=patsjzwz4qgedw8r';
     $username = 'f7hh5s22ggfpu19t';
     $password = 'ajvuqgzttv0vh7kc';
 
