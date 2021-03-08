@@ -13,7 +13,7 @@
 
 <?php 
 
-    $query = 'SELECT * from makes';
+    $query = 'SELECT * from vehicles';
     $statement = $db->prepare($query);
     $statement->execute();
     $results = $statement->fetchAll();
@@ -25,12 +25,16 @@
                 <section>
                 
                 <?php foreach ($results as $result) : ?>
-                
+                <table>
                 <tr>
-                    <td><?php echo $result['make']; ?></td><br>
-                    <td><?php echo $result['make_id']; ?></td><br>
+                    <td><?php echo $result['year']; ?></td>
+                    <td><?php echo $result['model']; ?></td>
+                    <td><?php echo $result['price']; ?></td>
+                    <td><?php echo $result['type_id']; ?></td>
+                    <td><?php echo $result['class_id']; ?></td>
+                    <td><?php echo $result['make_id']; ?></td>
                 </tr>
-
+                </table>
                 <?php endforeach; ?>
                 </section>
     
