@@ -41,6 +41,5 @@
                 <?php endforeach; ?>
                 </section>
     
-</body>
-</html>
+<?php include ('view/footer.php') ?>
 
