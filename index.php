@@ -1,4 +1,4 @@
-<?php require ('database.php'); ?>
+<!-- <?php require ('database.php'); ?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +11,9 @@
 <body>
 
 
+<h1>TEST<h1>
+
+<!--  
 <?php 
 
     $query = 'SELECT * from vehicles';
@@ -40,3 +43,5 @@
     
 </body>
 </html>
+
+-->
