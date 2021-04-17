@@ -27,7 +27,7 @@ switch($action){
         break;
 
     case "show_login":
-        echo '<script>alert(" s login ")</script>';   
+        
         include ('./view/login.php');
         break;
 
