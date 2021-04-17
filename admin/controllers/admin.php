@@ -13,7 +13,7 @@ $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_SANITIZE
 
 switch($action){
     case "login":
-        echo '<script>alert("log")</script>';   
+        
         if(is_valid_admin_login($username, $password))
         {
             $_SESSION['is_valid_admin'] = true;
@@ -50,12 +50,12 @@ switch($action){
         break;
 
     case "show_register":
-        echo '<script>alert("show r")</script>';   
+        
         include ('./view/register.php');
         break;
 
     case "logout":
-        echo '<script>alert("logout")</script>';   
+         
         unset($_SESSION['is_valid_admin']);
         session_destroy();
         $session = session_name();
