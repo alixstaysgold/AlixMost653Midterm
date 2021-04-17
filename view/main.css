@@ -1,0 +1,89 @@
+html {
+    width: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body {
+    width:90%
+}
+h1 {
+    color:red;
+    text-align: left;
+    font-size: 42px;
+    
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:lightgray;
+}
+
+#dropdowns {
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:24px;
+}
+
+
+
+#dropdown{
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+th{
+    font-size:16px;
+    border:1px black;
+}
+
+table {
+    table-layout: auto;
+    width: 90%;
+    height: 100%;
+    border: 1px solid black;   
+    margin:auto;
+    
+}
+td{
+    text-align:center;
+}
+
+.manage{
+    background-color: lightblue;
+  border: 1px black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.manage:hover {
+    background-color: blue;
+    color: white;
+  }
+
+.delete_button{
+    background-color:red;
+    color:white;
+    font-size:14px;
+}
+
+.add_button{
+    background-color: lightgreen;
+  border: 1px black;
+  color: black;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.add_button:hover {
+    background-color: green;
+    color: white;
+  }
+
+#tablehead{
+    border: 1px black;
+}
