@@ -1,5 +1,5 @@
  <?php 
-  $dsn = 'mysql:host=localhost;dbname=zippyusedautos';
+ /*  $dsn = 'mysql:host=localhost;dbname=zippyusedautos';
     $username = 'root';
 
 
@@ -11,8 +11,8 @@
         exit();
     } 
 
-   
-/* 
+   */
+
     $username = 'uafgtkkgfamydekk';
     $password = 'rmyd2np0ng51y10q';
 
@@ -25,4 +25,4 @@
         exit();
     }
 
-    ?>   */
+    ?>   
