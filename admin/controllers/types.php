@@ -9,7 +9,7 @@ $class_name = filter_input(INPUT_POST, 'class_name', FILTER_SANITIZE_STRING);
 
 switch($action){
     case "manage_types":
-        $types = get_types();
+        $types = typeDB::get_types();
         include('./view/type_list.php');
         break;
     case "add_type":

@@ -83,10 +83,10 @@ else if ($action == "login" || $action == "show_login" || $action == "register" 
 }
 
 else{
-    $vehicles = get_vehicles_by_class($class_id, $order);
-    $makes = get_makes();
-    $types = get_types();
-    $classes = get_classes();
+    $vehicles = vehicleDB::get_vehicles_by_class($class_id, $order);
+    $makes = makeDB::get_makes();
+    $types = typeDB::get_types();
+    $classes = classDB::get_classes();
     include('./view/vehicle_list.php');
 }
 

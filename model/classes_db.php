@@ -1,7 +1,7 @@
 <?php
-
-function get_classes(){
-    global $db;
+class classDB{
+public static function get_classes(){
+    $db = Database::getDB();
     $query = 'SELECT * FROM classes ORDER BY class_id';
     $statement = $db->prepare($query);
     $statement->execute();
@@ -10,8 +10,8 @@ function get_classes(){
     return $classes;
 }
 
-function get_class_name($class_id){
-    global $db;
+public static function get_class_name($class_id){
+    $db = Database::getDB();
     $query = 'SELECT * FROM classes
               WHERE class_id = :class_id';
     $statement = $db->prepare($query);
@@ -22,8 +22,8 @@ function get_class_name($class_id){
     return $class;
 }
 
-function add_class($class_name){
-    global $db;
+public static function add_class($class_name){
+    $db = Database::getDB();
     $query = 'INSERT INTO classes
                 (Class)
               VALUES
@@ -34,16 +34,17 @@ function add_class($class_name){
     $statement->closeCursor();
 }
 
-function delete_class($class_id){
-    global $db;
+public static function delete_class($class_id){
+    $db = Database::getDB();
     $query = 'DELETE FROM classes
               WHERE class_id = :class_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':class_id', $class_id);
     $statement->execute();
     $statement->closeCursor();
+
 }
 
 
 
-?>
+}

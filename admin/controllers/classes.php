@@ -9,7 +9,7 @@ $class_name = filter_input(INPUT_POST, 'class_name', FILTER_SANITIZE_STRING);
 
 switch($action){
     case "manage_classes":
-        $classes = get_classes();
+        $classes = classDB::get_classes();
         include('./view/class_list.php');
         break;
     case "add_class":

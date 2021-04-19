@@ -20,9 +20,9 @@ case "add_vehicle":
     header("Location: .?action=default");
     break;
 case "add_vehicle_page":
-    $makes = get_makes();
-    $types = get_types();
-    $classes = get_classes();
+    $makes = makeDB::get_makes();
+    $types = typeDB::get_types();
+    $classes = classDB::get_classes();
     include('./view/add_vehicle.php');
     break;
 case "delete_vehicle":
@@ -40,34 +40,34 @@ case "delete_vehicle":
 
     case "search_cars":
         if ($make_id){
-            $vehicles = get_vehicles_by_make($make_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = vehicleDB::get_vehicles_by_make($make_id, $order);
+            $makes = makeDB::get_makes();
+            $types = typeDB::get_types();
+            $classes = classDB::get_classes();
             include ('./view/vehicle_list.php');
             break;
         }
         else if (!$make_id && $type_id){
-            $vehicles = get_vehicles_by_type($type_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = vehicleDB::get_vehicles_by_type($type_id, $order);
+            $makes = makeDB::get_makes();
+            $types = typeDB::get_types();
+            $classes = classDB::get_classes();
             include ('./view/vehicle_list.php');
             break;
         }
         else if (!$make_id && !$type_id && $class_id){
-            $vehicles = get_vehicles_by_class($class_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = vehicleDB::get_vehicles_by_class($class_id, $order);
+            $makes = makeDB::get_makes();
+            $types = typeDB::get_types();
+            $classes = classDB::get_classes();
             include ('./view/vehicle_list.php');
             break;
         }
         else {
-            $vehicles = get_vehicles_by_class($class_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = vehicleDB::get_vehicles_by_class($class_id, $order);
+            $makes = makeDB::get_makes();
+            $types = typeDB::get_types();
+            $classes = classDB::get_classes();
             include ('./view/vehicle_list.php');
             break;
         } }

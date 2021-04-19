@@ -34,6 +34,11 @@ switch($action){
     case "register":
         include('util/valid_register.php');
         valid_registration($username, $password, $confirm_password);
+        
+        if (username_exists($username)) {
+            array_push($errors, "The username you entered is already taken.");
+        }
+        
         if(valid_registration($username, $password, $confirm_password))
         {
             $errors = valid_registration($username,$password,$confirm_password);

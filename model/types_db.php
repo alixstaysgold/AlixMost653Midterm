@@ -1,7 +1,8 @@
 <?php
 
-function get_types(){
-    global $db;
+class typeDB{
+public static function get_types(){
+    $db = Database::getDB();
     $query = 'SELECT * FROM types ORDER BY type_id';
     $statement = $db->prepare($query);
     $statement->execute();
@@ -10,8 +11,8 @@ function get_types(){
     return $types;
 }
 
-function get_type_name($type_id){
-    global $db;
+public static function get_type_name($type_id){
+    $db = Database::getDB();
     $query = 'SELECT * FROM types
               WHERE type_id = :type_id';
     $statement = $db->prepare($query);
@@ -22,8 +23,8 @@ function get_type_name($type_id){
     return $type;
 }
 
-function add_type($type_name){
-    global $db;
+public static function add_type($type_name){
+    $db = Database::getDB();
     $query = 'INSERT INTO types
                 (Type)
               VALUES
@@ -34,8 +35,8 @@ function add_type($type_name){
     $statement->closeCursor();
 }
 
-function delete_type($type_id){
-    global $db;
+public static function delete_type($type_id){
+    $db = Database::getDB();
     $query = 'DELETE FROM types
               WHERE type_id = :type_id';
     $statement = $db->prepare($query);
@@ -44,6 +45,6 @@ function delete_type($type_id){
     $statement->closeCursor();
 }
 
-
+}
 
 ?>

@@ -8,7 +8,7 @@ $type_name = filter_input(INPUT_POST, 'type_name', FILTER_SANITIZE_STRING);
 $class_name = filter_input(INPUT_POST, 'class_name', FILTER_SANITIZE_STRING);
 switch($action){
 case "manage_makes":
-    $makes = get_makes();
+    $makes = makeDB::get_makes();
     include('./view/make_list.php');
     break;
 case "add_make":
