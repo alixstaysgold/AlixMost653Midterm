@@ -35,6 +35,7 @@ switch($action){
         include('util/valid_register.php');
         ValidRegister::valid_registration($username, $password, $confirm_password);
         
+        // it wouldn't work if I kept this in for some reason
         // if (AdminDB::username_exists($username)) {
         //     array_push($errors, "The username you entered is already taken.");
         // }

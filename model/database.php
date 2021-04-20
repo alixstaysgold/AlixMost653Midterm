@@ -2,7 +2,7 @@
 
     class Database
 {
-/*     private static $dsn = 'mysql:host=lyn7gfxo996yjjco.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=je132qzsqwi45k1l';
+     private static $dsn = 'mysql:host=lyn7gfxo996yjjco.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=je132qzsqwi45k1l';
     private static $username = 'uafgtkkgfamydekk';
     private static $password = 'rmyd2np0ng51y10q';
     private static $db;
@@ -27,9 +27,9 @@
         }
         return self::$db;
     }
-}  */
+} 
 
-
+/* 
     private static $dsn = 'mysql:host=localhost;dbname=zippyusedautos';
     private static $username = 'root';
     private static $password = '';
@@ -54,5 +54,4 @@
             }
         }
         return self::$db;
-    }
-} 
+    } */
