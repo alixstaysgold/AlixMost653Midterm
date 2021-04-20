@@ -1,7 +1,7 @@
 <?php
-
-function add_admin($username, $password) {
-    global $db;
+class adminDB{
+public static function add_admin($username, $password) {
+    $db = Database::getDB();
     $hash = password_hash($password, PASSWORD_DEFAULT);
     $query = ' INSERT INTO administrators (username, password)
                 VALUES (:username, :password)';
@@ -12,8 +12,8 @@ function add_admin($username, $password) {
     $statement -> closeCursor();
 }
 
-function is_valid_admin_login($username, $password){
-    global $db;
+public static function is_valid_admin_login($username, $password){
+    $db = Database::getDB();
     $query = 'SELECT password FROM administrators
                 WHERE username = :username';
     $statement = $db->prepare($query);
@@ -25,8 +25,8 @@ function is_valid_admin_login($username, $password){
     return password_verify($password, $hash);
 }
 
-function is_valid_login($username, $password) {
-    global $db;
+public static function is_valid_login($username, $password) {
+    $db = Database::getDB();
     $query = 'SELECT password FROM administrators
         WHERE username = :username';
 
@@ -40,9 +40,9 @@ function is_valid_login($username, $password) {
 
 }
 
-function username_exists($username)
+public static function username_exists($username)
 {
-    global $db;
+    $db = Database::getDB();
     $query = 'SELECT COUNT(*) FROM administrators
                 WHERE username = :username';
     $statement = $db->prepare($query);
@@ -51,4 +51,5 @@ function username_exists($username)
     $match = $statement->fetchColumn();
     $statement->closeCursor();
     return $match;
+}
 }

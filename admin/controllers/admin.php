@@ -14,7 +14,7 @@ $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_SANITIZE
 switch($action){
     case "login":
         
-        if(is_valid_admin_login($username, $password))
+        if(AdminDB::is_valid_admin_login($username, $password))
         {
             $_SESSION['is_valid_admin'] = true;
             header("Location: .?action=search_vehicles");
@@ -33,24 +33,25 @@ switch($action){
 
     case "register":
         include('util/valid_register.php');
-        valid_registration($username, $password, $confirm_password);
+        ValidRegister::valid_registration($username, $password, $confirm_password);
         
-        if (username_exists($username)) {
-            array_push($errors, "The username you entered is already taken.");
-        }
+        // if (AdminDB::username_exists($username)) {
+        //     array_push($errors, "The username you entered is already taken.");
+        // }
         
-        if(valid_registration($username, $password, $confirm_password))
+        if(ValidRegister::valid_registration($username, $password, $confirm_password))
         {
-            $errors = valid_registration($username,$password,$confirm_password);
+            $errors = self::valid_registration($username,$password,$confirm_password);
             foreach ($errors as $error)
             {
             echo '<h3>'.$error.'</h3><br/>';
             }
             include('view/register.php');
         } else{
-            add_admin($username,$password);
+            AdminDB::add_admin($username,$password);
             $_SESSION['is_valid_admin'] = true;
             include('../admin/controllers/vehicles.php');
+            header('Location:.');
         }
         break;
 
@@ -75,10 +76,10 @@ switch($action){
         include('./view/login.php');
         break;
     default: 
-    $vehicles = get_vehicles_by_class($class_id, $order);
-    $makes = get_makes();
-    $types = get_types();
-    $classes = get_classes();
+    $vehicles = vehicleDB::get_vehicles_by_class($class_id, $order);
+    $makes = makeDB::get_makes();
+    $types = typeDB::get_types();
+    $classes = classDB::get_classes();
     include('./view/vehicle_list.php');   
 
 
